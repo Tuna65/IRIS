@@ -1,0 +1,94 @@
+@use "./../../assets/scss/" as *;
+
+.Header__wrapper {
+  padding: 24px 48px;
+  background-color: $bg-teal;
+  border-bottom: 1px solid #ccc;
+
+  .Header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Header__left {
+      position: relative;
+
+      input {
+        border: 1px solid #ccc;
+        padding: 12px 36px;
+        font-size: 18px;
+        border-radius: 4px;
+
+        &::placeholder {
+          font-size: 14px;
+        }
+      }
+
+      svg {
+        position: absolute;
+        top: 14px;
+        left: 12px;
+        color: #666;
+        cursor: pointer;
+      }
+    }
+    .Header__right {
+      display: flex;
+      align-items: center;
+
+      & > * {
+        margin-left: 3.5rem;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: $green;
+        }
+      }
+
+      svg {
+        font-size: 26px;
+      }
+
+      .Header__notifi {
+        position: relative;
+
+        .Header__notifi-state {
+          position: absolute;
+          border: 4px solid $green;
+          border-radius: 50%;
+          top: -5px;
+        }
+      }
+
+      .Header__avatar {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 34px;
+        }
+
+        .Header__avatar-state {
+          position: absolute;
+          bottom: 0;
+          width: 8px;
+          height: 8px;
+          border: 2px solid $white;
+          border-radius: 50%;
+          background-color: $green;
+          right: 12px;
+        }
+
+        svg {
+          color: $green;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.Header__notifi {
+}
