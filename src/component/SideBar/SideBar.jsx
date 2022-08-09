@@ -6,6 +6,7 @@ import { navData } from "./constants";
 
 function SideBar() {
   const [show, setShow] = useState("");
+  const [active, setActive] = useState(0);
 
   return (
     <div className="Sidebar__wrapper">
@@ -28,6 +29,8 @@ function SideBar() {
                       if (show !== `${index1}_${index}`)
                         setShow(`${index1}_${index}`);
                       else setShow("");
+
+                      setActive(0);
                     }}
                   >
                     <span
@@ -42,12 +45,19 @@ function SideBar() {
                         <FontAwesomeIcon icon={faAngleUp} />
                       ))}
                   </div>
-                  {show === `${index1}_${index}` &&
-                    item.details.map((list, index) => (
-                      <ul className="SideBar__list" key={index}>
-                        <li>{list}</li>
-                      </ul>
-                    ))}
+                  {show === `${index1}_${index}` && (
+                    <ul className="SideBar__list">
+                      {item.details.map((list, index) => (
+                        <li
+                          key={index}
+                          className={active === index ? "active" : ""}
+                          onClick={() => setActive(index)}
+                        >
+                          {list}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>

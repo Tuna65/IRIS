@@ -40,14 +40,14 @@
         margin-left: 3.5rem;
         cursor: pointer;
         transition: color 0.2s ease;
-
-        &:hover {
-          color: $green;
-        }
       }
 
       svg {
         font-size: 26px;
+
+        &:hover {
+          color: $green;
+        }
       }
 
       .Header__notifi {
@@ -85,10 +85,46 @@
           color: $green;
           font-size: 18px;
         }
+
+        .Header__dropdown {
+          position: absolute;
+          top: 45px;
+          left: -80px;
+          background-color: $bg-teal;
+          width: 130px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          transition: all 0.3s ease;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            right: 22px;
+            display: block;
+            border: 10px solid;
+            border-color: transparent transparent #ccc transparent;
+          }
+
+          .dropdown__inner {
+            text-transform: capitalize;
+
+            ul {
+              & > * {
+                padding: 8px 16px;
+
+                &:hover {
+                  color: $green;
+                }
+              }
+
+              & > :first-child {
+                border-bottom: 1px solid #ccc;
+              }
+            }
+          }
+        }
       }
     }
   }
-}
-
-.Header__notifi {
 }

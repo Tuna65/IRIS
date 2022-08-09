@@ -46,6 +46,7 @@
     .SideBar__list {
       padding: 0 0 0 26px;
       list-style: circle;
+      transition: all 0.3s ease;
 
       & > * {
         padding: 8px 0;
